@@ -12,7 +12,7 @@ var advent = (function() {
       }
       if (floorNumber < 0) console.log(i + 1);
     }
-    console.log(floorNumber);
+    console.log('We need to end up on the '+floorNumber+' floor');
   }
 
   function dayTwo(presentsDimensions) {
@@ -36,8 +36,8 @@ var advent = (function() {
       ribbonLength = (l * w * h) + (dimensionsSorted[0] + dimensionsSorted[0] + dimensionsSorted[1] + dimensionsSorted[1]);
       totalRibbonLength += ribbonLength;
     }
-    console.log(squareFootage);
-    console.log(totalRibbonLength);
+    console.log('There is '+squareFootage+' sqft of wrapping paper needed.');
+    console.log('We need '+totalRibbonLength+' feet of ribbon for this many presents.');
   }
 
   function dayThree(santas, route) {
@@ -65,7 +65,7 @@ var advent = (function() {
 
       step = (step == Object.keys(santa).length - 1 ? 0 : turnOrder + 1);
     }
-    console.log(santas+' Santa(s) brought presents to '+(Object.keys(houses).length - 1)+' houses'); // Because it counts its own prototype in length? Just a guess...
+    console.log(santas+' Santa(s) brought presents to '+(Object.keys(houses).length - 1)+' houses.'); // Because it counts its own prototype in length? Just a guess...
   }
 
   return {
