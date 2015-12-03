@@ -63,7 +63,7 @@ var advent = (function() {
       let index = santa[b % santas].x+' : '+santa[b % santas].y;
       houses[index] ? houses[index]++ : houses[index] = 1;
 
-      step = (turnOrder == Object.keys(santa).length - 1 ? 0 : turnOrder + 1);
+      step = (step == Object.keys(santa).length - 1 ? 0 : turnOrder + 1);
     }
     console.log(santas+' Santa(s) brought presents to '+(Object.keys(houses).length - 1)+' houses'); // Because it counts its own prototype in length? Just a guess...
   }
