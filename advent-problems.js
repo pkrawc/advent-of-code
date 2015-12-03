@@ -43,7 +43,7 @@ var advent = (function() {
   function dayThree(santas, route) {
     const routeArray = route.split('');
     let santa = {};
-    let turnOrder = 0;
+    let step = 0;
     let houses = { '0:0': 0 };
     for (let a = 0; a < santas; a++) {
       santa[a] = { x: 0, y: 0 }
@@ -51,19 +51,19 @@ var advent = (function() {
     }
     for (let b = 0; b < routeArray.length; b++) {
       switch (routeArray[b]) {
-        case '^': santa[turnOrder].y++;
+        case '^': santa[step].y++;
         break;
-        case '>': santa[turnOrder].x++;
+        case '>': santa[step].x++;
         break;
-        case 'v': santa[turnOrder].y--;
+        case 'v': santa[step].y--;
         break;
-        case '<': santa[turnOrder].x--;
+        case '<': santa[step].x--;
         break;
       }
       let index = santa[b % santas].x+' : '+santa[b % santas].y;
       houses[index] ? houses[index]++ : houses[index] = 1;
 
-      turnOrder = (turnOrder == Object.keys(santa).length - 1 ? 0 : turnOrder + 1);
+      step = (turnOrder == Object.keys(santa).length - 1 ? 0 : turnOrder + 1);
     }
     console.log(santas+' Santa(s) brought presents to '+(Object.keys(houses).length - 1)+' houses'); // Because it counts its own prototype in length? Just a guess...
   }
