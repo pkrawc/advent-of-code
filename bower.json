@@ -1,0 +1,22 @@
+{
+  "name": "advent-of-code",
+  "homepage": "https://github.com/pkrawc/advent-of-code",
+  "authors": [
+    "Patrick Krawczykowski <pkrawz@gmail.com>"
+  ],
+  "description": "",
+  "main": "advent-problems.js",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "js-md5": "md5#~0.3.0"
+  }
+}

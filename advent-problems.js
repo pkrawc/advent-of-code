@@ -63,14 +63,26 @@ var advent = (function() {
       let index = santa[b % santas].x+' : '+santa[b % santas].y;
       houses[index] ? houses[index]++ : houses[index] = 1;
 
-      step = (step == Object.keys(santa).length - 1 ? 0 : turnOrder + 1);
+      step = (step == Object.keys(santa).length - 1 ? 0 : step + 1);
     }
+    console.log(houses);
     console.log(santas+' Santa(s) brought presents to '+(Object.keys(houses).length - 1)+' houses.'); // Because it counts its own prototype in length? Just a guess...
+  }
+
+  function dayFour(key) {
+    let number = 0;
+    let hash = md5(key + number);
+    while (hash.slice(0, 6) !== '000000') {
+      number++;
+      hash = md5(key + number);
+    }
+    console.log(number);
   }
 
   return {
     findFloor: dayOne,
     wrappingPaperCalc: dayTwo,
-    deliveredPresents: dayThree
+    deliveredPresents: dayThree,
+    adventCoinHash: dayFour
   }
 })();
